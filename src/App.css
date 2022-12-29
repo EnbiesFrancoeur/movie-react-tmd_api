@@ -1,0 +1,106 @@
+:root {
+  --primary-color: hsl(210, 50%, 50%);
+  --secondary-color: hsl(210, 50%, 60%)
+}
+
+* {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 3rem;
+  padding-top: 2rem;
+}
+
+h1,
+form {
+  margin: auto;
+  max-width: 20rem;
+}
+
+nav form input {
+  padding: 10px;
+  text-align: center;
+  font-weight: bolder;
+  background-color: var(--secondary-color)
+}
+
+
+
+nav form button {
+  margin: 4rem auto;
+  padding: 10px;
+  text-align: center;
+  font-size: 1rem;
+  background-color: var(--secondary-color)
+}
+
+input,
+button {
+  margin: 4rem auto;
+  padding: 10px;
+  text-align: center;
+  font-weight: bolder;
+  font-size: 1rem;
+}
+
+
+main {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.movieHeader {
+  margin-top: 5rem;
+  font-size: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.movieHeader {
+  width: 19rem;
+  margin-left: 0.5rem;
+}
+
+
+
+img {
+  display: block;
+  width: 20rem;
+  height: 25rem;
+  margin-bottom: -1.25rem;
+  border-radius: 10px;
+}
+
+.movieFooter {
+  display: flex;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+}
+
+.date,
+.rate {
+  background-color: transparent;
+  color: rgb(238, 7, 7);
+  font-weight: bolder;
+}
+
+.date {
+  font-size: 0.5 rem;
+}
