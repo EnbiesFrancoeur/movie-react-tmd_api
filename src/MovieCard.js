@@ -9,7 +9,7 @@ const MovieCard = (props) => {
         <strong className='title'>{props.title}</strong>
       </div>
       <div className="poster">
-        <img src={props.poster_path == null ? "https://source.unsplash.com/320x400?movie-poster" : apiImg + props.poster_path} alt="poster" />
+        <img src={props.poster_path == null ? "https://source.unsplash.com/320x400?movie-theater" : apiImg + props.poster_path} alt="poster" />
       </div>
       <div className='movieFooter'>
         <span className='date'>{props.release_date}</span>
