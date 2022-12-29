@@ -51,11 +51,22 @@ button {
 }
 
 
-main {
+.moviesWrapper {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 1rem;
+  border-bottom: 3px solid black;
+}
+
+main h2 {
+  margin: 5rem 5rem 0 5rem;
+  width: 13rem;
+  border-radius: 1rem;
+  background-color: black;
+  padding: 1rem;
+  text-align: center;
 }
 
 .movieHeader {
@@ -67,8 +78,10 @@ main {
 
 .movieHeader {
   width: 19rem;
-  margin-left: 0.5rem;
+  text-align: center;
 }
+
+
 
 img {
   display: block;

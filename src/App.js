@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import MovieCard from './MovieCard';
+import PopularMovie from './PopularMovie';
 import './App.css';
+import NewestMovie from './NewestMovie';
 
 function App() {
-  const API_URL = "https://api.themoviedb.org/3/movie/popular?page=1&api_key=8f11a2c440e8e722cffbc76df58bc14c"
-
+  const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=8f11a2c440e8e722cffbc76df58bc14c"
   const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=8f11a2c440e8e722cffbc76df58bc14c&query="
 
   const [Movies, setMovies] = useState([])
@@ -25,8 +25,6 @@ function App() {
       .then(data => setMovies(data.results))
   }
 
-  console.log(Movies);
-
   return (
     <>
       <a href="/"><h1>Enbies Movie</h1></a>
@@ -39,11 +37,18 @@ function App() {
         </form>
       </nav>
       <main>
-        {Movies.map((movie) => <MovieCard {...movie} key={movie.id} />)}
+        <h2>Popular Movies</h2>
+        <div className='moviesWrapper'>
+          {Movies.map(movie => <PopularMovie {...movie} key={movie.id} />)}
+        </div>
+        <hr />
+        <h2>Highest Rated</h2>
+        <div className='moviesWrapper'>
+          <NewestMovie />
+        </div>
       </main>
-
     </>
-  );
+  )
 }
 
 export default App;

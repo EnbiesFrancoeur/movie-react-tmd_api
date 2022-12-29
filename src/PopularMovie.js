@@ -1,10 +1,8 @@
-import React from 'react'
-
-const MovieCard = (props) => {
+const PopularMovie = (props) => {
   const apiImg = "https://image.tmdb.org/t/p/w500/"
 
   return (
-    <div className="movieCard">
+    <div className="popularMovie">
       <div className="movieHeader">
         <strong className='title'>{props.title}</strong>
       </div>
@@ -21,4 +19,4 @@ const MovieCard = (props) => {
 
 // 
 
-export default MovieCard
+export default PopularMovie
