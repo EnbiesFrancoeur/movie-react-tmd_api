@@ -31,23 +31,15 @@ nav form input {
   background-color: var(--secondary-color)
 }
 
-
-
-nav form button {
-  margin: 4rem auto;
-  padding: 10px;
-  text-align: center;
-  font-size: 1rem;
-  background-color: var(--secondary-color)
-}
-
 input,
 button {
-  margin: 4rem auto;
+  background-color: var(--secondary-color);
   padding: 10px;
   text-align: center;
   font-weight: bolder;
   font-size: 1rem;
+  border: 1px solid black;
+  border-radius: 1rem;
 }
 
 
@@ -56,12 +48,12 @@ button {
   gap: 3rem;
   flex-wrap: wrap;
   justify-content: center;
-  padding-bottom: 1rem;
+  padding-bottom: 5rem;
   border-bottom: 3px solid black;
 }
 
-main h2 {
-  margin: 5rem 5rem 0 5rem;
+h2 {
+  margin: 3rem 0 5rem 6rem;
   width: 13rem;
   border-radius: 1rem;
   background-color: black;
@@ -70,7 +62,6 @@ main h2 {
 }
 
 .movieHeader {
-  margin-top: 5rem;
   font-size: 1.5rem;
   display: flex;
   justify-content: space-around;
@@ -82,13 +73,25 @@ main h2 {
 }
 
 
-
 img {
-  display: block;
   width: 20rem;
-  height: 25rem;
+  height: 20rem;
   margin-bottom: -1.25rem;
   border-radius: 10px;
+  object-fit: fill;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.poster {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.poster:hover img {
+  transform: scale(1.05);
+  box-shadow: 0px 0 125px rgba(255, 255, 255, 0.5);
+
 }
 
 .movieFooter {
@@ -99,19 +102,41 @@ img {
 .title {
   font-size: 1.5rem;
   margin-bottom: .5rem;
+  height: 3rem;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-
 }
 
 .date,
 .rate {
   background-color: transparent;
-  color: rgb(238, 7, 7);
   font-weight: bolder;
+  position: absolute;
 }
 
 .date {
-  font-size: 0.5 rem;
+  left: 0;
+  top: 0;
+  font-weight: 1000;
+  font-size: 1.5rem;
+  color: rgb(255, 0, 0);
+}
+
+.rate {
+  color: black;
+  top: 10px;
+  right: 10px;
+  border-radius: 50%;
+  padding: .5rem;
+  border: 1px solid white;
+}
+
+.details {
+  margin-top: 1rem;
+}
+
+.notFound {
+  color: red;
+  text-align: center;
 }

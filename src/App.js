@@ -1,53 +1,36 @@
-import { useEffect, useState } from 'react';
-import PopularMovie from './PopularMovie';
 import './App.css';
-import NewestMovie from './NewestMovie';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+
+import { MovieContext } from './components/MoviesContext'
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import MovieDetails from './components/MovieDetails';
+import { useState } from 'react';
+
 
 function App() {
-  const API_URL = "https://api.themoviedb.org/3/movie/popular?api_key=8f11a2c440e8e722cffbc76df58bc14c"
-  const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=8f11a2c440e8e722cffbc76df58bc14c&query="
-
   const [Movies, setMovies] = useState([])
-  const [value, setValue] = useState('')
+  const [Value, setValue] = useState('')
 
-  useEffect(() => {
-    fetch(API_URL)
-      .then(response => response.json())
-      .then(data => setMovies(data.results))
-  }, [])
-
-  const handleSearch = (e) => {
-    e.preventDefault()
-    if (value === "") return
-
-    fetch(API_SEARCH + value)
-      .then(response => response.json())
-      .then(data => setMovies(data.results))
-  }
-
+  console.log(Movies);
   return (
-    <>
-      <a href="/"><h1>Enbies Movie</h1></a>
-      <nav>
-        <form onSubmit={handleSearch}>
-          <input type="text"
-            placeholder='Search Movie here'
-            onChange={(e) => setValue(e.target.value)} />
-          <button>Search</button>
-        </form>
-      </nav>
-      <main>
-        <h2>Popular Movies</h2>
-        <div className='moviesWrapper'>
-          {Movies.map(movie => <PopularMovie {...movie} key={movie.id} />)}
+    <MovieContext.Provider value={{ Movies, setMovies, Value, setValue }}>
+      <BrowserRouter>
+        <Navbar />
+        <div className="pages">
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/details/:movieId"
+              element={<MovieDetails />}
+            />
+          </Routes>
         </div>
-        <hr />
-        <h2>Highest Rated</h2>
-        <div className='moviesWrapper'>
-          <NewestMovie />
-        </div>
-      </main>
-    </>
+      </BrowserRouter>
+    </MovieContext.Provider>
   )
 }
 
