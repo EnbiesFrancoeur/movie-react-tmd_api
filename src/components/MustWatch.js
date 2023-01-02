@@ -1,12 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function MovieList() {
+  const navigate = useNavigate()
   const apiImg = "https://image.tmdb.org/t/p/w500/"
   const [movies, setMovies] = useState([]);
+
   const setRateColor = vote => {
     if (vote >= 8) return 'green'
     else if (vote >= 6) return 'goldenrod'
     else return 'red'
+  }
+
+  const showMovieDetail = id => {
+    navigate(`/details/${id}`)
   }
 
   useEffect(() => {
@@ -15,14 +22,11 @@ function MovieList() {
       .then(data => {
         setMovies(data.results)
       })
-      .catch(error => {
-        console.error(error)
-      })
   }, [])
   return (
     <>
       {movies.map(movie => (
-        <div className="mustWatch" key={movie.id}>
+        <div className="mustWatch" key={movie.id} onClick={() => showMovieDetail(movie.id)}>
           <div className="movieHeader">
             <strong className='title'>{movie.title !== "" ? movie.title : "???"}</strong>
           </div>

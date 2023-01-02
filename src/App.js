@@ -9,26 +9,25 @@ import { useState } from 'react';
 
 
 function App() {
+  const apiImg = "https://image.tmdb.org/t/p/w500/"
   const [Movies, setMovies] = useState([])
   const [Value, setValue] = useState('')
 
   console.log(Movies);
   return (
-    <MovieContext.Provider value={{ Movies, setMovies, Value, setValue }}>
+    <MovieContext.Provider value={{ Movies, setMovies, Value, setValue, apiImg }}>
       <BrowserRouter>
         <Navbar />
-        <div className="pages">
-          <Routes>
-            <Route
-              path="/"
-              element={<Home />}
-            />
-            <Route
-              path="/details/:movieId"
-              element={<MovieDetails />}
-            />
-          </Routes>
-        </div>
+        <Routes>
+          <Route
+            path="/"
+            element={<Home />}
+          />
+          <Route
+            path="/details/:movieId"
+            element={<MovieDetails />}
+          />
+        </Routes>
       </BrowserRouter>
     </MovieContext.Provider>
   )

@@ -1,6 +1,8 @@
+import { useNavigate } from "react-router-dom"
 
-const PopularMovie = (props) => {
+const MovieCard = (props) => {
   const apiImg = "https://image.tmdb.org/t/p/w500/"
+  const navigate = useNavigate()
 
   const setRateColor = vote => {
     if (vote >= 8) return 'green'
@@ -8,8 +10,12 @@ const PopularMovie = (props) => {
     else return 'red'
   }
 
+  const showMovieDetail = id => {
+    navigate(`/details/${id}`)
+  }
+
   return (
-    <div className="popularMovie">
+    <div className="MovieCard" onClick={() => showMovieDetail(props.id)}>
       <div className="movieHeader">
         <strong className='title'>{props.title}</strong>
       </div>
@@ -24,4 +30,4 @@ const PopularMovie = (props) => {
 
 // 
 
-export default PopularMovie
+export default MovieCard

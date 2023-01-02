@@ -11,6 +11,7 @@
   border: 0;
   text-decoration: none;
   box-sizing: border-box;
+  list-style: none;
 }
 
 h1 {
@@ -139,4 +140,93 @@ img {
 .notFound {
   color: red;
   text-align: center;
+}
+
+.movie-details {
+  width: 100%;
+}
+
+.movie-details h2 {
+  margin: 5rem auto;
+  width: 30%;
+  padding: 3rem;
+  font-size: 3rem;
+  font-weight: 800;
+  text-align: center;
+}
+
+.movie-detail {
+  display: flex;
+  gap: 10vw;
+  width: 100%;
+}
+
+.movie-detail img {
+  width: 35rem;
+  height: 35rem;
+  border-radius: 1rem;
+}
+
+.movie-detail li {
+  margin-top: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: bolder;
+}
+
+.detail-left {
+  width: 50%;
+  height: 70%;
+  margin: 0 5rem;
+  background-color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.detail-left ul {
+  background-color: var(--secondary-color);
+}
+
+.detail-left ul li p {
+  background-color: var(--secondary-color);
+}
+
+.detail-left button {
+  margin-top: 1rem;
+}
+
+.synopsis {
+  display: block;
+  background-color: var(--secondary-color);
+  font-size: 1.5rem;
+  padding: 1rem;
+  border-radius: 1rem;
+  width: 90%;
+  margin-bottom: 5rem;
+}
+
+.synopsis span {
+  display: block;
+  margin-bottom: 1rem;
+  background-color: transparent;
+}
+
+.detail-right {
+  margin: 0 auto;
+}
+
+.trailer iframe {
+  width: 90%;
+  height: 60vh;
+  max-height: 60%;
+  border-radius: 1rem;
+}
+
+.detail-right h3 {
+  margin: 2rem auto;
+  font-size: 2rem;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: var(--primary-color);
 }

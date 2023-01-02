@@ -4,7 +4,7 @@ import { MovieContext } from './MoviesContext'
 
 const Navbar = () => {
 
-  const { Movies, setMovies, Value, setValue } = useContext(MovieContext)
+  const { setMovies, Value, setValue } = useContext(MovieContext)
 
   const API_SEARCH = "https://api.themoviedb.org/3/search/movie?api_key=8f11a2c440e8e722cffbc76df58bc14c&query="
 
@@ -18,7 +18,9 @@ const Navbar = () => {
   }
   return (
     <div>
-      <Link to='/' onClick={e => e.defaultPrevented()}><h1>Enbies Movie</h1></Link>
+      <Link to='/' onClick={e => e.defaultPrevented()}>
+        <h1>Enbies Movie</h1>
+      </Link>
       <nav>
         <form onSubmit={handleSearch}>
           <input type="text"
