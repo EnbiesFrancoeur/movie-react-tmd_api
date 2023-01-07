@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
-
 import { MovieContext } from './components/MoviesContext'
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import MovieDetails from './components/MovieDetails';
 import { useState } from 'react';
+import GoToTop from './components/GoToTop';
 
 
 function App() {
@@ -13,7 +13,6 @@ function App() {
   const [Movies, setMovies] = useState([])
   const [Value, setValue] = useState('')
 
-  console.log(Movies);
   return (
     <MovieContext.Provider value={{ Movies, setMovies, Value, setValue, apiImg }}>
       <BrowserRouter>
@@ -28,6 +27,7 @@ function App() {
             element={<MovieDetails />}
           />
         </Routes>
+        <GoToTop />
       </BrowserRouter>
     </MovieContext.Provider>
   )

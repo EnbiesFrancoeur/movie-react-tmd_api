@@ -230,3 +230,25 @@ button:hover {
   cursor: pointer;
   background-color: var(--primary-color);
 }
+
+.goTop {
+  position: fixed;
+  bottom: 3rem;
+  right: 1rem;
+  border: none;
+  outline: none;
+  font-size: 1.25rem;
+  border-radius: 50%;
+  line-height: 1rem;
+  background-color: #0069d9;
+  transition: background-color 0.3s;
+  display: none;
+}
+
+.goTop:hover {
+  background-color: #007bff;
+}
+
+.goTop.show {
+  display: block;
+}

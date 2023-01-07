@@ -20,8 +20,6 @@ const MovieDetails = () => {
       .then(data => setVideoKey(data.results[0].key))
   }, [MOVIE_DETAILS_URL, VIDEO_URL])
 
-  console.log(MovieDetails);
-
   return (
     <div className="movie-details">
       <h2>{MovieDetails?.original_title}</h2>
